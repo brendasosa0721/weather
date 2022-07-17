@@ -1,0 +1,37 @@
+
+/*Website Title*/
+
+.title{
+
+}
+
+/*card body styling*/
+
+.card-body{
+    background-color: lightgray;
+}
+
+
+
+/*Search btn styling*/
+.searchbtn{
+    color: red;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color:blanchedalmond;
+}
+
+.searchbtn:hover{
+    transition: 2s;
+    color: blue;
+    cursor: pointer;
+}
+input{
+    border-radius: 5px;
+    border-color: gray;
+}
+
+
+.hidden{
+    display: none;
+}
