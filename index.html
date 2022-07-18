@@ -12,7 +12,7 @@
    
     <!--Title-->
     <title>Weather</title>
-    
+
 </head>
 
 <!--Content-->
@@ -21,16 +21,23 @@
     <h1 class="title">Weather Dashboard</h1>
   </div>
 </div>
-
-    <div class="card-body border border-info border-start-0">
+<!--City Search session-->
+    <div id="citysearch"    class="card-body border border-info border-start-0">
       <h4 class="search-title">Search for a City:</h4>
       <input class="input">
       <button class="searchbtn">Search</button>
     </div>
-    <div class="card-body text-center border border-info border-start-0 hidden">
-      <h2 class="dashboard ">Weather</h2>
+    <!--Forecast Session-->
+    <div  id="forecast"   class="card-body text-center border border-info border-start-0 hidden">
+        <h1 class="current-weather">Today's Weather</h1>
+        <p class="today"></p>
+      <h3 class="dashboard ">5- Days Weather Forecast</h3>
     </div>
+    
   </div>
+
+
+
 </div>
 <body>
    
