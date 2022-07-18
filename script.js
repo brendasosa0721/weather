@@ -27,6 +27,8 @@ var citysearch = document.querySelector("#citysearch")
 var todayDay = document.querySelector(".today")
 var currentweather = document.querySelector(".current-weather")
 var weathercard = document.querySelector("#weather-card")
+var inputs = document.querySelector(".input").value
+
 
 
 // Event Listener to the searchbtn
@@ -43,13 +45,41 @@ searchbtn.addEventListener("click", function(){
   todayDay.innerHTML = currentDay
 });
 
+// API Call
 
+var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + inputs + "&units=imperial&appid="  + apiKey;
+//console.log(queryURL)
+
+//Fetch function
+
+fetch(queryURL).then(function(response){
+    //console.log(response)
+    if(response.ok){
+        response.json().then (function(data){
+            console.log(data)
+        })
+    }
+})
+
+// fetch(file)
+// .then((response) => response.json())
+// .then((data) => {
+// // Weather main data
+// let main = data.current.weather[0].main;
+// let description = data.current.weather[0].description;
+// let temp = Math.round(data.current.temp);
+// let pressure = data.current.pressure;
+// let humidity = data.current.humidity;
+// let name = "";
+
+//Local Storage
 
 // API call
 // let queryUrl = "https://api.openweathermap.org/data/2.5/onecall?";
 // let lat = "lat=52.229676&";
 // let lon = "lon=21.012229&";
-// let apiOptions = "units=metric&exclude=minutely,alerts&";
+ //let apiOptions = "units=imperial&exclude=minutely,alerts&";
 // let apiKey = "appid=dbb76c5d98d5dbafcb94441c6a10236e";
 // let file = queryUrl + lat + lon + apiOptions + apiKey;
 
