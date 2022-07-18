@@ -23,17 +23,19 @@ var searchbtn = document.querySelector(".searchbtn")
 var card = document.querySelector(".card")
 var dashboard = document.querySelector(".dashboard")
 var forecast = document.querySelector("#forecast")
-var cityseach = document.querySelector("#citysearch")
+var citysearch = document.querySelector("#citysearch")
 var todayDay = document.querySelector(".today")
 var currentweather = document.querySelector(".current-weather")
+var weathercard = document.querySelector("#weather-card")
 
 
 // Event Listener to the searchbtn
 searchbtn.addEventListener("click", function(){
-  card.classList.add ("hidden"), 
+  card.classList.add ("hidden"), // Hidden the card session
   console.log("card");
-  forecast.classList.remove("hidden");
-  cityseach.classList.add("hidden")
+  forecast.classList.remove("hidden"); //  Showing the forecast session
+  citysearch.classList.add("hidden") // Hidden the citysearch session
+  weathercard.classList.remove("hidden") //Showing the weather cards session
 
   //Current day using moment js
   var currentDay = moment().format("MMM Do YY");

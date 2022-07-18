@@ -1,9 +1,6 @@
 
 /*Website Title*/
 
-.title{
-
-}
 
 /*card body styling*/
 
@@ -12,20 +9,21 @@
     
 }
 
-
-
 /*Search btn styling*/
 .searchbtn{
-    color: red;
+    color: black;
     font-weight: bold;
     border-radius: 10px;
-    background-color:blanchedalmond;
+    background-color:whitesmoke;
+    cursor: pointer;
+    flex-grow: 6;
+    flex-basis: 120px;
 }
 
 .searchbtn:hover{
     transition: 2s;
-    color: blue;
-    cursor: pointer;
+    color: red;
+    
 }
 input{
     border-radius: 5px;
@@ -50,6 +48,43 @@ input{
     transition: 2s;
     
 }
+
+/*Weather cards styling*/
+
+#weather-card{
+    background-color: lightgray;
+    
+}
+.card:hover{
+    flex-grow: 5;
+    cursor: pointer;
+    flex-basis: 120px;
+    border: 10px solid black;
+
+}
+
+/*Css with bootstrap*/
+
+.gradient-custom {
+/* fallback for old browsers */
+background: #ffffff;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
+}
+
+.carousel-indicators li {
+background-color: #282828;
+width: 7px;
+height: 7px;
+border-radius: 50%;
+}
+
+
+
 /*hidden features*/
 .hidden{
     display: none;
