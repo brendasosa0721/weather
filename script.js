@@ -27,40 +27,80 @@ var citysearch = document.querySelector("#citysearch")
 var todayDay = document.querySelector(".today")
 var currentweather = document.querySelector(".current-weather")
 var weathercard = document.querySelector("#weather-card")
-var inputs = document.querySelector(".input").value
+var inputs = document.querySelector("#weather-input");
 
 
 
 // Event Listener to the searchbtn
 searchbtn.addEventListener("click", function(){
-  card.classList.add ("hidden"), // Hidden the card session
-  console.log("card");
-  forecast.classList.remove("hidden"); //  Showing the forecast session
-  citysearch.classList.add("hidden") // Hidden the citysearch session
-  weathercard.classList.remove("hidden") //Showing the weather cards session
-
-  //Current day using moment js
-  var currentDay = moment().format("MMM Do YY");
-  console.log("currentDay");
-  todayDay.innerHTML = currentDay
+    searchFromApi()
 });
 
+function populateCityWeather(){
+    card.classList.add("hidden"), // Hidden the card session
+      console.log("card");
+    forecast.classList.remove("hidden"); //  Showing the forecast session
+    citysearch.classList.add("hidden"); // Hidden the citysearch session
+    weathercard.classList.remove("hidden"); //Showing the weather cards session
+
+    //Current day using moment js
+    var currentDay = moment().format("MMM Do YY");
+    console.log("currentDay");
+    todayDay.innerHTML = currentDay;
+}
+
 // API Call
+ function searchFromApi() {
+console.log(inputs);
+var inputs = document.querySelector("#weather-input");
+   var inputValue = inputs.value;
+   var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +  inputValue + "&appid=" + apiKey;
 
-var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?" + inputs + "&units=imperial&appid="  + apiKey;
-//console.log(queryURL)
+   //  //Fetch function
+   fetch(queryURL)// Fetch Data
+     .then(function (response) { // Promise has been resolve sucessfully
+       return response.json(); // parse the response to be an object/promise
+     })
 
-//Fetch function
+     .then(function (data) { // new promise has been resolved
+       console.log(data);
+       searchFromCoordinate(data.coord.lon , data.coord.lat) // data holds the responses from the API
+     });
+ }
 
-fetch(queryURL).then(function(response){
-    //console.log(response)
-    if(response.ok){
-        response.json().then (function(data){
-            console.log(data)
-        })
-    }
+ //Current Weather- Calling the current weather
+function searchFromCoordinate(lon , lat ){
+
+}
+
+
+//Local Storage
+var storageInput = localStorage.getItem(inputs)
+console.log(storageInput)
+inputs = storageInput
+
+citysearch.addEventListener("text", function(){
+    console.log("text")
+
+    var text = inputs.text.target.value;
+    console.log(text)
+    localStorage.setItem(text , inputs)
 })
+
+// <div id="citysearch"    class="card-body border border-info border-start-0">
+//       <h4 class="search-title">Search for a City:</h4>
+//       <input id="storage" type="text" class="input">
+//       <button id="btn"  class="searchbtn">Search</button>
+//     </div>
+   
+
+
+
+
+ 
+
+
 
 // fetch(file)
 // .then((response) => response.json())
