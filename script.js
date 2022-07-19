@@ -19,24 +19,18 @@
 // THEN I am again presented with current and future conditions for that city
 
 //Variables
-var searchbtn = document.querySelector(".searchbtn")
-var card = document.querySelector(".card")
-var dashboard = document.querySelector(".dashboard")
-var forecast = document.querySelector("#forecast")
-var citysearch = document.querySelector("#citysearch")
-var todayDay = document.querySelector(".today")
-var currentweather = document.querySelector(".current-weather")
-var weathercard = document.querySelector("#weather-card")
+var searchbtn = document.querySelector(".searchbtn");
+var card = document.querySelector(".card");
+var dashboard = document.querySelector(".dashboard");
+var forecast = document.querySelector("#forecast");
+var citysearch = document.querySelector("#citysearch");
+var todayDay = document.querySelector(".today");
+var currentweather = document.querySelector(".current-weather");
+var weathercard = document.querySelector("#weather-card");
 var inputs = document.querySelector("#weather-input");
 
-
-
 // Event Listener to the searchbtn
-searchbtn.addEventListener("click", function(){
-    searchFromApi()
-});
-
-function populateCityWeather(){
+searchbtn.addEventListener("click", function () {
     card.classList.add("hidden"), // Hidden the card session
       console.log("card");
     forecast.classList.remove("hidden"); //  Showing the forecast session
@@ -47,60 +41,66 @@ function populateCityWeather(){
     var currentDay = moment().format("MMM Do YY");
     console.log("currentDay");
     todayDay.innerHTML = currentDay;
+  searchFromApi();
+});
+
+// Populating the weather
+function populateCityWeather() {
+ var btn = document.querySelector("#btn")
+ btn.addEventListener("click" , function(){
+    btn = populateCityWeather
+ })
 }
 
 // API Call
- function searchFromApi() {
-console.log(inputs);
-var inputs = document.querySelector("#weather-input");
-   var inputValue = inputs.value;
-   var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
-   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" +  inputValue + "&appid=" + apiKey;
+function searchFromApi() {
+  console.log(inputs);
+  var inputs = document.querySelector("#weather-input");
+  var inputValue = inputs.value;
+  var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+  var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    inputValue +
+    "&appid=" +
+    apiKey;
 
-   //  //Fetch function
-   fetch(queryURL)// Fetch Data
-     .then(function (response) { // Promise has been resolve sucessfully
-       return response.json(); // parse the response to be an object/promise
-     })
+  //  //Fetch function
+  fetch(queryURL) // Fetch Data
+    .then(function (response) {
+      // Promise has been resolve sucessfully
+      return response.json(); // parse the response to be an object/promise
+    })
 
-     .then(function (data) { // new promise has been resolved
-       console.log(data);
-       searchFromCoordinate(data.coord.lon , data.coord.lat) // data holds the responses from the API
-     });
- }
+    .then(function (data) {
+      // new promise has been resolved
+      console.log(data);
+      searchFromCoordinate(data.coord.lon, data.coord.lat); // data holds the responses from the API
+    });
+}
 
- //Current Weather- Calling the current weather
-function searchFromCoordinate(lon , lat ){
+//Current Weather- Calling the current weather
+function searchFromCoordinate(lon, lat) {
 
 }
 
-
 //Local Storage
-var storageInput = localStorage.getItem(inputs)
-console.log(storageInput)
-inputs = storageInput
+var storageInput = localStorage.getItem(inputs);
+console.log(storageInput);
+inputs = storageInput;
 
-citysearch.addEventListener("text", function(){
-    console.log("text")
+citysearch.addEventListener("text", function () {
+  console.log("text");
 
-    var text = inputs.text.target.value;
-    console.log(text)
-    localStorage.setItem(text , inputs)
-})
+  var text = inputs.text.target.value;
+  console.log(text);
+  localStorage.setItem(text, inputs);
+});
 
 // <div id="citysearch"    class="card-body border border-info border-start-0">
 //       <h4 class="search-title">Search for a City:</h4>
 //       <input id="storage" type="text" class="input">
 //       <button id="btn"  class="searchbtn">Search</button>
 //     </div>
-   
-
-
-
-
- 
-
-
 
 // fetch(file)
 // .then((response) => response.json())
@@ -119,7 +119,7 @@ citysearch.addEventListener("text", function(){
 // let queryUrl = "https://api.openweathermap.org/data/2.5/onecall?";
 // let lat = "lat=52.229676&";
 // let lon = "lon=21.012229&";
- //let apiOptions = "units=imperial&exclude=minutely,alerts&";
+//let apiOptions = "units=imperial&exclude=minutely,alerts&";
 // let apiKey = "appid=dbb76c5d98d5dbafcb94441c6a10236e";
 // let file = queryUrl + lat + lon + apiOptions + apiKey;
 
