@@ -45,17 +45,17 @@ searchbtn.addEventListener("click", function () {
 });
 
 // Populating the weather
-function populateCityWeather() {
- var btn = document.querySelector("#btn")
- btn.addEventListener("click" , function(){
-    btn = populateCityWeather
- })
-}
+// function populateCityWeather() {
+//  var btn = document.querySelector("#btn")
+//  btn.addEventListener("click" , function(){
+//     btn = populateCityWeather
+//  })
+// }
 
 // API Call
 function searchFromApi() {
-  console.log(inputs);
   var inputs = document.querySelector("#weather-input");
+  console.log(inputs);
   var inputValue = inputs.value;
   var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
   var queryURL =
@@ -80,8 +80,28 @@ function searchFromApi() {
 
 //Current Weather- Calling the current weather
 function searchFromCoordinate(lon , lat) {
-//  var displayWeather = document.querySelector(".text-muted");
-//  displayWeather.innerHTML = "<p>" + "Temperature" + data.main + "</p>"
+  var apiKey = "041178dcf4de97eb135ec7c055f2f00a";
+  var inputs = document.querySelector("#weather-input");
+fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&units=imperial")
+  .then(function (response) {
+    // Promise has been resolve sucessfully
+    return response.json(); // parse the response to be an object/promise
+  })
+
+  .then(function (data) {
+    // new promise has been resolved
+    console.log(data);
+   document.querySelector("#temp-display").textContent = data.current.temp
+   document.querySelector("#city-display").textContent = inputs.value
+// current day
+   for(var i = 1; i < 6 ; i++){
+ document.querySelector("#temp" + i).textContent = data.daily[i].temp.day
+// five day
+   }
+    
+   
+  
+  });
 }
 
 // Forecast Weather
