@@ -79,10 +79,14 @@ function searchFromApi() {
 }
 
 //Current Weather- Calling the current weather
-function searchFromCoordinate(lon, lat) {
-
+function searchFromCoordinate(lon , lat) {
+//  var displayWeather = document.querySelector(".text-muted");
+//  displayWeather.innerHTML = "<p>" + "Temperature" + data.main + "</p>"
 }
 
+// Forecast Weather
+
+//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
 //Local Storage
 var storageInput = localStorage.getItem(inputs);
 console.log(storageInput);
@@ -96,11 +100,6 @@ citysearch.addEventListener("text", function () {
   localStorage.setItem(text, inputs);
 });
 
-// <div id="citysearch"    class="card-body border border-info border-start-0">
-//       <h4 class="search-title">Search for a City:</h4>
-//       <input id="storage" type="text" class="input">
-//       <button id="btn"  class="searchbtn">Search</button>
-//     </div>
 
 // fetch(file)
 // .then((response) => response.json())
