@@ -93,10 +93,20 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + l
     console.log(data);
    document.querySelector("#temp-display").textContent = data.current.temp
    document.querySelector("#city-display").textContent = inputs.value
-// current day
+  document.querySelector("#humidity").textContent = data.current.humidity
+  document.querySelector("#wind-speed").textContent = data.current.wind_speed
+  document.querySelector("#uvindex").textContent = data.current.uvi
+
+// {/* <p id="humidity" class="text-muted mb-0">Humidity</p>
+//                       <h2 id="wind-speed"><strong></strong>13.8</h2>
+//                       <p id="speed" class="text-muted mb-0">Wind Speed</p>
+//                       <h2 id="uv"><strong>11.23</strong></h2>
+//                       <p id="uvindex" class="text-muted mb-0">UV Index</p>
+//                     </div> */}
+
    for(var i = 1; i < 6 ; i++){
  document.querySelector("#temp" + i).textContent = data.daily[i].temp.day
-// five day
+// five day with Moment JS
    }
     
    
