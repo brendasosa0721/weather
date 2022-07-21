@@ -85,12 +85,10 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + l
     // new promise has been resolved
     console.log(data);
     document.querySelector("#temp-display").textContent =
-      data.current.temp + "°F";
+    data.current.temp + "°F";
     document.querySelector("#city-display").textContent = inputs.value;
-    document.querySelector("#humidity").textContent =
-      "Humidity " + data.current.humidity + "%" + "°F";
-    document.querySelector("#wind-speed").textContent =
-      "Wind Speed " + data.current.wind_speed + " mph ";
+    document.querySelector("#humidity").textContent = "Humidity " + data.current.humidity + "%" ;
+    document.querySelector("#wind-speed").textContent = "Wind Speed " + data.current.wind_speed + " mph ";
     document.querySelector("#uvindex").textContent = "UVI " + data.current.uvi;
     
 
@@ -111,7 +109,7 @@ var storageInput = localStorage.getItem(inputs);
 console.log(storageInput);
 inputs = storageInput;
 
-citysearch.addEventListener("text", function () {
+citysearch.addEventListener( "text", function () {
   console.log("text");
 
   var text = inputs.text.target.value;
