@@ -52,14 +52,15 @@ input{
 /*Weather cards styling*/
 
 #weather-card{
-    background-color: lightgray;
+    background-color:transparent;
+   
     
 }
 .card:hover{
     flex-grow: 5;
     cursor: pointer;
     flex-basis: 120px;
-    border: 10px solid black;
+    border: 10px solid orange;
 
 }
 
@@ -72,32 +73,33 @@ input{
     font-size: 20px;
 }
 
-/*Css with bootstrap*/
-
-.gradient-custom {
-/* fallback for old browsers */
-background: #ffffff;
-
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 236, 210, 1))
-}
-
-.carousel-indicators li {
-background-color: #282828;
-width: 7px;
-height: 7px;
-border-radius: 50%;
-}
-
-
-
 
 /*hidden features*/
 .hidden{
     display: none;
 }
 
-/* Media Query*/
+/*  MEDIA QUERY FOR TABLETS AND SMALLER DEVICES*/
+
+@media screen and (max-width: 760px), screen and (max-width:575px) {
+  .row {
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .hour {
+    padding-right: 17%;
+  }
+
+  .saveBtn {
+    border: 0;
+    border-radius: 0.25rem;
+    height: 50px;
+  }
+
+  textarea {
+    min-height: 85px;
+    border: 0;
+  }
+  
+}
