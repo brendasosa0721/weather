@@ -63,6 +63,15 @@ input{
 
 }
 
+#styling{ /*Styling for the current day card*/
+    font-weight: bold;
+   
+}
+
+#city-display{ /* City Name*/
+    font-size: 20px;
+}
+
 /*Css with bootstrap*/
 
 .gradient-custom {
@@ -82,6 +91,7 @@ width: 7px;
 height: 7px;
 border-radius: 50%;
 }
+
 
 
 

@@ -93,16 +93,10 @@ fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + l
     console.log(data);
    document.querySelector("#temp-display").textContent = data.current.temp
    document.querySelector("#city-display").textContent = inputs.value
-  document.querySelector("#humidity").textContent = data.current.humidity
-  document.querySelector("#wind-speed").textContent = data.current.wind_speed
-  document.querySelector("#uvindex").textContent = data.current.uvi
+  document.querySelector("#humidity").textContent = "Humidity " + data.current.humidity + "%"
+  document.querySelector("#wind-speed").textContent = "Wind Speed " + data.current.wind_speed + " mph "
+  document.querySelector("#uvindex").textContent = "UVI " + data.current.uvi
 
-// {/* <p id="humidity" class="text-muted mb-0">Humidity</p>
-//                       <h2 id="wind-speed"><strong></strong>13.8</h2>
-//                       <p id="speed" class="text-muted mb-0">Wind Speed</p>
-//                       <h2 id="uv"><strong>11.23</strong></h2>
-//                       <p id="uvindex" class="text-muted mb-0">UV Index</p>
-//                     </div> */}
 
    for(var i = 1; i < 6 ; i++){
  document.querySelector("#temp" + i).textContent = data.daily[i].temp.day
@@ -184,19 +178,7 @@ citysearch.addEventListener("text", function () {
 // document.getElementById("wrapper-hour4").innerHTML = hour4 + "°";
 // document.getElementById("wrapper-hour5").innerHTML = hour5 + "°";
 
-// // Time
-// let timeNow = new Date().getHours();
-// let time1 = timeNow + 1;
-// let time2 = time1 + 1;
-// let time3 = time2 + 1;
-// let time4 = time3 + 1;
-// let time5 = time4 + 1;
 
-// document.getElementById("wrapper-time1").innerHTML = time1;
-// document.getElementById("wrapper-time2").innerHTML = time2;
-// document.getElementById("wrapper-time3").innerHTML = time3;
-// document.getElementById("wrapper-time4").innerHTML = time4;
-// document.getElementById("wrapper-time5").innerHTML = time5;
 
 // // Weather daily data
 // let tomorrowTemp = Math.round(data.daily[0].temp.day);
