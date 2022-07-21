@@ -7,9 +7,9 @@ This is weather application where you would search for any city and as a result 
 
 ***# Website Screenshot & Live URL & Github:***
 
-**Live URL:**
+**Live URL:** https://brendasosa0721.github.io/weather/
 
-**Github:**
+**Github:** https://github.com/brendasosa0721/weather
 
 ![Screen Shot 2022-07-20 at 8 31 01 PM](https://user-images.githubusercontent.com/106204413/180203942-8b0906cf-cc21-46f8-83be-f2a707e351a1.png)
 
@@ -18,6 +18,7 @@ This is weather application where you would search for any city and as a result 
 1. HTML.
 2. CSS.
 3. JavaScript.
+4. BootStrap.
 
 ***# Constribution***
 
